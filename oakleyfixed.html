@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VHS Transfers</title>
+
+  <!-- jQuery (needed for DataTables) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- DataTables (JS + CSS) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datatables.net-dt/css/jquery.dataTables.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/datatables.net/js/jquery.dataTables.min.js"></script>
+
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    table { width: 100%; }
+  </style>
+</head>
+<body>
+  <h2>VHS Transfers CSV Viewer</h2>
+  <table id="csvTable" class="display"></table>
+
+  <script>
+    const csvUrl = "https://gamedays-software-development.github.io/OakleyFixed/vhs_transfers.csv"; 
+    // 👆 replace with your actual GitHub raw link
+
+    Papa.parse(csvUrl, {
+      download: true,
+      header: true,
+      complete: function(results) {
+        const data = results.data;
+        const columns = [
+          { title: "Deck", data: "Deck" },
+          { title: "VHS", data: "VHS" },
+          { title: "Timestamp", data: "Timestamp" },
+          { title: "Note", data: "Note" }
+        ];
+        $('#csvTable').DataTable({
+          data: data,
+          columns: columns,
+          pageLength: 25
+        });
+      }
+    });
+  </script>
+</body>
+</html>
