@@ -20,12 +20,11 @@
   </style>
 </head>
 <body>
-  <h2>VHS Transfers CSV Viewer</h2>
+  <center><h2 style="c: ;">Oakley Tapes Fixed Transfers Status</h2></center>
   <table id="csvTable" class="display"></table>
 
   <script>
     const csvUrl = "https://gamedays-software-development.github.io/OakleyFixed/vhs_transfers.csv"; 
-    // 👆 replace with your actual GitHub raw link
 
     Papa.parse(csvUrl, {
       download: true,
@@ -42,9 +41,11 @@
           data: data,
           columns: columns,
           pageLength: 25
+          order: [[2, 'desc']]
         });
       }
     });
   </script>
 </body>
 </html>
+
