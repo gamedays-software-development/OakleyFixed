@@ -15,6 +15,26 @@
   <script src="https://cdn.jsdelivr.net/npm/datatables.net/js/jquery.dataTables.min.js"></script>
 
   <style>
+    .title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    letter-spacing: 4px;
+    position: relative;
+    }
+
+    .title::before {
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 #ff0000;
+    top: 0;
+    color: #0ff;
+    background: #000;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+    }
     body {
       font-family: "Courier New", monospace;
       margin: 2em;
@@ -154,7 +174,7 @@ body.dark table.dataTable tbody td {
 </head>
 <body class="dark">
   <center>
-    <h2>Oakley Tapes Fixed Transfers Status</h2>
+    <h2 class="title">Oakley Tapes Fixed Transfers</h2>
     <button id="themeToggle">Switch Theme</button>
   </center>
   <table id="csvTable" class="display"></table>
@@ -190,6 +210,7 @@ body.dark table.dataTable tbody td {
   </script>
 </body>
 </html>
+
 
 
 
