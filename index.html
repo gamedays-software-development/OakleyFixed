@@ -3,14 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>VHS Transfers</title>
-
-  <!-- jQuery (needed for DataTables) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- PapaParse for CSV parsing -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-
-  <!-- DataTables (JS + CSS) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datatables.net-dt/css/jquery.dataTables.min.css">
   <script src="https://cdn.jsdelivr.net/npm/datatables.net/js/jquery.dataTables.min.js"></script>
 
@@ -39,15 +33,12 @@
       font-family: "Courier New", monospace;
       margin: 2em;
       background-color: #121212;
-      color: #0ff; /* light blue text */
+      color: #0ff;
       transition: background-color 0.3s, color 0.3s;
     }
-    
     h2 {
       color: #0ff;
     }
-
-    /* Toggle button */
     #themeToggle {
       background: #1e1e1e;
       border: 1px solid #0ff;
@@ -62,8 +53,7 @@
       background: #0ff;
       color: #121212;
     }
-
-    /* DataTables dark mode (default) */
+    
     body.dark table.dataTable {
       border-collapse: collapse !important;
       background-color: #1e1e1e;
@@ -102,10 +92,9 @@
       color: #121212 !important;
     }
 
-    /* Light mode */
     body.light {
       background-color: #fdfdfd;
-      color: #004080; /* deep blue text */
+      color: #004080; 
     }
     body.light h2 {
       color: #003366;
@@ -150,15 +139,12 @@
       background: #004080 !important;
       color: #fff !important;
     }
-    /* Light mode row striping */
 body.light table.dataTable tbody td:nth-child(odd) {
   background-color: #f9f9f9;
 }
 body.light table.dataTable tbody td:nth-child(even) {
   background-color: #ffffff;
 }
-
-/* Dark mode row striping */
 body.dark table.dataTable tbody td:nth-child(odd) {
   background-color: #2a2a2a !important;
 }
@@ -166,9 +152,11 @@ body.dark table.dataTable tbody td:nth-child(even) {
   background-color: #1e1e1e !important;
 }
 
-/* Make sure text stays visible */
 body.dark table.dataTable tbody td {
   color: #0ff;
+}
+    table.dataTable.display tbody td, table.dataTable.display tbody th, table.dataTable.row-border tbody td, table.dataTable.row-border tbody th {
+  border: 1px solid rgba(0, 255, 255, 0.2);
 }
   </style>
 </head>
@@ -201,8 +189,6 @@ body.dark table.dataTable tbody td {
         });
       }
     });
-
-    // Theme toggle
     document.getElementById('themeToggle').addEventListener('click', function() {
       document.body.classList.toggle('dark');
       document.body.classList.toggle('light');
@@ -210,6 +196,7 @@ body.dark table.dataTable tbody td {
   </script>
 </body>
 </html>
+
 
 
 
