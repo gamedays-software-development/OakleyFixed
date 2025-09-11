@@ -169,7 +169,7 @@ body.dark table.dataTable tbody td {
 
   <script>
     const csvUrl = "https://gamedays-software-development.github.io/OakleyFixed/vhs_transfers.csv"; 
-
+    $.fn.dataTable.ext.errMode = 'none';
     Papa.parse(csvUrl, {
       download: true,
       header: true,
@@ -196,6 +196,7 @@ body.dark table.dataTable tbody td {
   </script>
 </body>
 </html>
+
 
 
 
