@@ -29,6 +29,50 @@
     clip: rect(0, 900px, 0, 0);
     animation: glitch-effect 3s infinite linear alternate-reverse;
     }
+    @keyframes glitch-effect {
+    0% {
+        clip: rect(44px, 900px, 56px, 0);
+    }
+    20% {
+        clip: rect(12px, 900px, 78px, 0);
+    }
+    40% {
+        clip: rect(86px, 900px, 98px, 0);
+    }
+    60% {
+        clip: rect(33px, 900px, 45px, 0);
+    }
+    80% {
+        clip: rect(67px, 900px, 89px, 0);
+    }
+    100% {
+        clip: rect(22px, 900px, 34px, 0);
+    }
+}
+
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 255, 0.1);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+}
+
+.scanline-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 255, 255, 0.05);
+    animation: scanline 12s linear infinite;
+    pointer-events: none;
+    animation-delay: 4s;
+}
+
     body {
       font-family: "Courier New", monospace;
       margin: 2em;
@@ -162,7 +206,8 @@ body.dark table.dataTable tbody td {
 </head>
 <body class="dark">
   <center>
-    <h2 class="title">Oakley Tapes Fixed Transfers</h2>
+    <div class="scanline"></div>
+    <div class="scanline-2"></div><h2 class="title">Oakley Tapes Fixed Transfers</h2>
     <button id="themeToggle">Switch Theme</button>
   </center>
   <table id="csvTable" class="display"></table>
@@ -196,6 +241,7 @@ body.dark table.dataTable tbody td {
   </script>
 </body>
 </html>
+
 
 
 
